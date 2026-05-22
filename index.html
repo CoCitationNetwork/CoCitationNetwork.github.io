@@ -3,3 +3,15 @@
 <title>Redirecting to https://LocalCitationNetwork.github.io/</title>
 <meta http-equiv="refresh" content="0; URL=https://LocalCitationNetwork.github.io/?API=Co%2ACitation%20Network%20via%20OpenAlex">
 <link rel="canonical" href="https://LocalCitationNetwork.github.io/?API=Co%2ACitation%20Network%20via%20OpenAlex">
+<script>
+  const qs = window.location.search;
+  if (qs) {
+    const url = new URL("https://LocalCitationNetwork.github.io/");
+    url.searchParams.set("API", "Co*Citation Network via OpenAlex");
+    const incoming = new URLSearchParams(qs);
+    for (const [key, value] of incoming) {
+      url.searchParams.set(key, value);
+    }
+    window.location.replace(url.toString());
+  }
+</script>
